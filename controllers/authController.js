@@ -73,6 +73,7 @@ exports.forgotPassword = async (req, res) => {
       text: `Click the following link to reset your password: http://localhost:3000/reset/${token}`,
     };
     
+    console.log(mailOptions);
     await transporter.sendMail(mailOptions);
     
     res.status(200).send('Password reset email sent!');
